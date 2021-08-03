@@ -8,9 +8,9 @@ Simple to use clone the repo and use npm install inside the folder. start the pr
 
 ## Current
 
-In the apps current state users can only practice multiplication with the max being 12x12. 
+In the apps current state users can practice multiplication up to 12x12 and addition with the highest individual number being 90. 
 
 ## future
 
-I plan on building subtraction, addition, and division. 
+I plan on building subtraction and division. I think I may build a proper front end so it is more user friendly. 
 

@@ -7,8 +7,8 @@ let questions = []
 
 // gets two random number with a max of 12
 function getNumber() {
-    let valueOne = Math.floor(Math.random() * 12)
-    let valueTwo = Math.floor(Math.random() * 12)
+    let valueOne = Math.floor(Math.random() * 13)
+    let valueTwo = Math.floor(Math.random() * 13)
     Quiz(valueOne, valueTwo);
 }
 
@@ -20,7 +20,7 @@ function Quiz(valueOne, valueTwo) {
         {
             type: 'input',
             name: 'question',
-            message: `${valueOne} x ${valueTwo}`
+            message: `${valueOne} x ${valueTwo} =`
         },
     ])
     .then((answer) => {
@@ -35,7 +35,7 @@ function Quiz(valueOne, valueTwo) {
         } else {
             console.log(`Incorrect the right answer is ${correct}`)
             wrong = wrong + 1
-            questions.push(`${valueOne} x ${valueTwo} = ${response} inCorrect`)
+            questions.push(`${valueOne} x ${valueTwo} = ${response} inCorrect (${correct})`)
             again()
         }
     })
@@ -60,8 +60,9 @@ function again() {
         if (res.again === "Yes!") {
             getNumber();
         } else {
-            console.log(`your final score is ${score} correct and ${wrong} incorrect.`)
             console.log(questions)
+            console.log(`your final score is ${score} correct and ${wrong} incorrect.`)
+            questions = []
             menu.menu();
         }
     })
